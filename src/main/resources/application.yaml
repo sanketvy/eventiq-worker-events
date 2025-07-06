@@ -1,4 +1,11 @@
 spring:
+  cassandra:
+    contact-points: 127.0.0.1   # Or container IP / service name
+    port: 9042
+    keyspace-name: eventiq_keyspace
+    local-datacenter: datacenter1       # Must match `dc` in cassandra-rackdc.properties
+    schema-action: create-if-not-exists  # or none, validate, recreate-drop-unused
+
   config:
     import: "consul:localhost:8500"
   kafka:
