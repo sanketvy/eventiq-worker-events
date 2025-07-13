@@ -42,6 +42,8 @@ spring:
           content-type: application/json
           consumer:
             batch-mode: true
+        processAnalytics-out-0:
+          destination: eventiq-analytics-topic
 
       kafka:
         bindings:
@@ -60,3 +62,7 @@ spring:
 
 server:
   port: 9055
+
+clickhouse:
+  base-url: http://localhost:8123
+  database: eventiq
